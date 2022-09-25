@@ -7,7 +7,20 @@ public class BonusScore implements GameScore{
      *@pos result >= 0
      **/
     @Override
-    public int calculateScore(int correctCount, int incorrectCount) {
-        return 0;
+    public int calculateScore(int correctCount , int incorrectCount){
+        int result = 0;
+        result = result + 10*correctCount - 5*incorrectCount;
+        if(result < 0 ) {
+            result = 0 ;
+        }
+
+        return result;
     }
+
+    @Override
+    public int reset() {
+        return 0;
+
+    }
+
 }

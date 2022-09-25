@@ -8,7 +8,21 @@ public class PowerScore implements GameScore{
      *@pos result <= 500
      **/
     @Override
-    public int calculateScore(int correctCount, int incorrectCount) {
+    public int calculateScore(int correctCount , int incorrectCount){
+        int result = 0;
+        result = (int) (result - (8*incorrectCount) + (Math.pow(5,correctCount)));
+
+        if (result < 0 || result == 1 ){
+            result = 0;
+        }
+        if (result > 500 ){
+            result = 500;
+        }
+        return result ;
+    }
+    @Override
+    public int reset() {
         return 0;
+
     }
 }
